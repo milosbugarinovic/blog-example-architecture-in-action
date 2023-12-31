@@ -1,0 +1,9 @@
+/.idea
+/node_modules
+/resource
+.*.js
+.*.json
+package-lock.json
+tsconfig*.json
+typedoc.json
+/jest*.config.js
