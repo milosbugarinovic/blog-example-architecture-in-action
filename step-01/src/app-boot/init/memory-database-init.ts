@@ -1,4 +1,6 @@
 import { Initiable } from '#src/app-boot/init/initiable'
+import { UserRepo } from '#src/business/repo/user-repo'
+import { constant } from '#src/util/constant'
 import { logger } from '#src/util/logger'
 
 // Application initiable layer for Memory Database. Here we have two functions init and destroy.
@@ -8,9 +10,16 @@ import { logger } from '#src/util/logger'
 export class MemoryDatabaseInit implements Initiable {
 	async init(): Promise<void> {
 		logger.info('MemoryDatabaseInit.init()')
+		this._seedUsers()
 	}
 
 	async destroy(): Promise<void> {
 		logger.info('MemoryDatabaseInit.destroy()')
+	}
+
+	protected _seedUsers(): void {
+		const userRepo = new UserRepo()
+		const { adminId, adminEmail, adminPassword } = constant()
+		userRepo.create({ data: { email: adminEmail, id: adminId, password: adminPassword } })
 	}
 }
