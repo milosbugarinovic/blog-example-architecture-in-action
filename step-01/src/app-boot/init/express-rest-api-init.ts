@@ -21,7 +21,7 @@ export class ExpressRestApiInit implements Initiable {
 		this._server = createServer(this._expressApp)
 	}
 
-	async init(): Promise<void> {
+	async create(): Promise<void> {
 		logger.info('ExpressRestApiInit.init()')
 		this._logAllRequestsComingToExpress()
 		this._setupExpressMiddleware()

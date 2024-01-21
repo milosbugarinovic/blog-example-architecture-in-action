@@ -10,8 +10,8 @@ export class ServiceApp {
 
 	// Execute init layers in certain order
 	async start(): Promise<void> {
-		await this._memoryDatabaseInit.init()
-		await this._expressRestAppInit.init()
+		await this._memoryDatabaseInit.create()
+		await this._expressRestAppInit.create()
 	}
 
 	// Execute destroy layers in certain order for graceful shutdown

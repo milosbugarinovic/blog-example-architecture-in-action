@@ -1,10 +1,14 @@
-import packageJson from './../../package.json' assert { type: 'json' }
-import path, { dirname } from 'path'
-import { fileURLToPath } from 'url'
+import { createRequire } from 'node:module'
+import path from 'path'
 
-const __dirname = dirname(fileURLToPath(import.meta.url))
+import { esModuleUtil } from '#src/util/es-module-util'
 
-const codeDir = path.join(__dirname, '..')
+const dirName = esModuleUtil.dirname()
+
+const cjsRequire = createRequire(dirName)
+const packageJson = cjsRequire('#package.json')
+
+const codeDir = path.join(dirName, '..')
 const rootDir = path.join(codeDir, '..')
 
 // this is a collection of constant values used in the app.

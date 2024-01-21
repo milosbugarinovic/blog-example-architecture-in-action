@@ -44,7 +44,9 @@
 		"target": "ESNext"
 	},
 	"include": [
-		"./src"
+		"./src",
+		"./jest.config.ts",
+		"./jest.config.unit.ts"
 	],
 	"ts-node": {
 		"esm": true,

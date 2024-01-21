@@ -8,7 +8,7 @@ import { logger } from '#src/util/logger'
 // Because this is memory database we don't need to implement destroy function. If this was a real database
 // we would need to disconnect from the database in destroy function, so we could gracefully shut down the app.
 export class MemoryDatabaseInit implements Initiable {
-	async init(): Promise<void> {
+	async create(): Promise<void> {
 		logger.info('MemoryDatabaseInit.init()')
 		this._seedUsers()
 	}
