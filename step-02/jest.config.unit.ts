@@ -17,7 +17,7 @@ const jestConfig: JestConfigWithTsJest = {
 	setupFilesAfterEnv: ['jest-extended/all'],
 	testEnvironment: 'node',
 	testMatch: ['<rootDir>/src/**/*.(spec|test).[jt]s?(x)'],
-	testPathIgnorePatterns: ['/node_modules/'],
+	testPathIgnorePatterns: ['/node_modules/', '/__tests__/'],
 	testTimeout: 20000,
 }
 
