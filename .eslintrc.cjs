@@ -61,10 +61,6 @@ module.exports = {
 					// 	group: ['src/dal/typeorm/entity/*'],
 					// 	message: 'Please use `src/dal/typeorm/entity` and expose your entity inside `src/dal/typeorm/entity/index.ts`',
 					// },
-					{
-						group: ['@blooms/*/src/*',],
-						message: 'Please use /dist/ instead of /src/ folder when importing common libraries',
-					},
 //					{
 //						group: ['**/index'],
 //						message: 'Please use `.../something` instead of ``.../something/index`',

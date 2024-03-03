@@ -1,5 +1,6 @@
-import { UserRepo } from '#src/business/repo/user-repo'
 import jwt from 'jsonwebtoken'
+
+import { UserRepo } from '#src/business/repo/user-repo'
 
 export const authService = {
 	login: (email: string, password: string): string => {
